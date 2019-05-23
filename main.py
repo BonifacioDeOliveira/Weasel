@@ -68,7 +68,6 @@ class App:
         self.iniciar["text"] = "Iniciar !"
         self.iniciar["width"] = 12
         self.iniciar["command"] = (lambda : resultado(self.Entrada.get(), self.Copias.get(), self.mutacao.get(), self.target.get()))
-        #self.iniciar["command"] = (lambda : resultado())
         self.iniciar.pack()
        
         self.scrollbar = Scrollbar(self.sextoContainer) 
@@ -79,14 +78,8 @@ class App:
         self.mylist["width"] = 200
         self.mylist["height"] = 400
         self.scrollbar.config( command = self.mylist.yview )
-
-        #self.listar.pack(side=UP)
         
         def resultado(CONST_STR, CONST_SIZE, CONST_PROB, ENTRADA):
-            #CONST_STR = "METHINKS IT IS LIKE A WEASEL"
-            #CONST_SIZE = 100
-            #CONST_PROB = 5
-            #ENTRADA  = "cccccccccccccccccccccccccccc"
             for i in (MW.Weasel(ENTRADA, CONST_SIZE, CONST_PROB, CONST_STR)):
                 self.mylist.insert(END, str(i))
                 
